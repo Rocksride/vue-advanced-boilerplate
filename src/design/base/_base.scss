@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  color: grey;
+  background-color: var(--c-active);
+}
+
+::selection {
+    background-color: red;
+    color: white;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  @include respond(tab-land) {
+      font-size: 56.25%; //1rem = 9px, 8/16 = 56.25%
+  }
+  @include respond(tab-port) {
+      font-size: 50%; //1rem = 8px, 8/16 = 50%
+  }
+  // order for this matters not
+  @include respond(big-desktop) {
+      font-size: 85%; //1rem = 12px, 12/16 = 0.75%;
+  }
+}
+
+a {
+  &:link,
+  &:visited,
+  & {
+    text-decoration: none;
+    // color: inherit;
+    cursor: pointer;
+  }
+}
+
+#nprogress .bar {
+  background: $color-link-text;
+}
+
+// #app {
+//   @extend %typography-small;
+// }
+
+// h1 {
+//   @extend %typography-xxlarge;
+// }
+
+// h2 {
+//   @extend %typography-xlarge;
+// }
+
+// h3 {
+//   @extend %typography-large;
+// }
+
+// h4 {
+//   @extend %typography-medium;
+// }
+
+// h5,
+// h6 {
+//   @extend %typography-small;
+// }

@@ -1,0 +1,83 @@
+// CONTENT
+
+$white: #fff;
+$black: #000;
+
+$color-body-bg: #f9f7f5;
+$color-text: #444;
+$color-heading-text: #35495e;
+
+// LINKS
+$color-link-text: #39a275;
+$color-link-text-active: $color-text;
+
+// INPUTS
+$color-input-border: lighten($color-heading-text, 50%);
+
+// BUTTONS
+$color-button-bg: $color-link-text;
+$color-button-disabled-bg: darken(desaturate($color-button-bg, 20%), 10%);
+$color-button-text: white;
+
+$color-notification-background: #222;
+
+$themes:
+('secondary', (
+  (c-text-light, #252525),
+  (c-text-dark, #222),
+  (c-active, #e83a30),
+  (c-background-dark, #202020),
+  (c-background-light,  #fff),
+  (c-delimiter, lavender),
+  (c-small-title, #a6a6a6)
+  )),
+('tertiary', (
+  (c-text-light, #252525),
+  (c-text-dark, #222),
+  (c-active, hsl(12,51,30)),
+  (c-background-dark, #202020),
+  (c-background-light,  #fff),
+  (c-delimiter, lavender),
+  (c-small-title, #a6a6a6)
+)),
+('primary', (
+  (c-text-light, #252525),
+  (c-text-dark, #222),
+  (c-active, #21c2f8),
+  (c-background-dark, #202020),
+  (c-background-light,  #fff),
+  (c-delimiter, lavender),
+  (c-small-title, #a6a6a6)
+));
+
+
+$info-light: #dcf2fb;
+$info: #5bccf0;
+$info-dark: #336170;
+
+$warning-light: #fff2d3;
+$warning: #eecb49;
+$warning-dark: #706029;
+
+$success-light: #dcf7d8;
+$success: #5fdb62;
+$success-dark: #346733;
+
+$danger-light: #ffd6d3;
+$danger: #ef4f5a;
+$danger-dark: #722c2e;
+
+
+@each $theme in $themes {
+  $themeName: nth($theme, 1);
+  $themeColors: nth($theme, 2);
+
+  @each $variable, $color in $themeColors {
+    html {
+      --#{$variable}: #{$color};
+    }
+    html[data-theme="#{$themeName}"] {
+      --#{$variable}: #{$color};
+    }
+  }
+}
