@@ -15,7 +15,7 @@
 
 ```bash
 # 1. Clone the repository.
-git clone https://github.com/chrisvfritz/vue-enterprise-boilerplate.git my-new-project
+git clone https://github.com/Rocksride/vue-advanced-boilerplate.git app
 
 # 2. Enter your newly-cloned folder.
 cd my-new-project
